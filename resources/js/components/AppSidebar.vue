@@ -33,17 +33,17 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'Tantangan',
-        href: `${home()}#challenges`,
+        href: `${home().url}#challenges`,
         icon: Target,
     },
     {
         title: 'Kategori',
-        href: `${home()}#kategori`,
+        href: `${home().url}#kategori`,
         icon: Palette,
     },
     {
         title: 'Hadiah',
-        href: `${home()}#hadiah`,
+        href: `${home().url}#hadiah`,
         icon: Trophy,
     },
     {
