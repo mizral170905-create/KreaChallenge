@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { BookOpen, FolderGit2, LayoutGrid } from '@lucide/vue';
+import {
+    ExternalLink,
+    LayoutGrid,
+    Palette,
+    Target,
+    Trophy,
+    UserRound,
+} from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
@@ -14,7 +21,8 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
+import { dashboard, home } from '@/routes';
+import { edit as profileEdit } from '@/routes/profile';
 import type { NavItem } from '@/types';
 
 const mainNavItems: NavItem[] = [
@@ -23,18 +31,33 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },
+    {
+        title: 'Tantangan',
+        href: `${home()}#challenges`,
+        icon: Target,
+    },
+    {
+        title: 'Kategori',
+        href: `${home()}#kategori`,
+        icon: Palette,
+    },
+    {
+        title: 'Hadiah',
+        href: `${home()}#hadiah`,
+        icon: Trophy,
+    },
+    {
+        title: 'Profil',
+        href: profileEdit(),
+        icon: UserRound,
+    },
 ];
 
 const footerNavItems: NavItem[] = [
     {
-        title: 'Repository',
-        href: 'https://github.com/laravel/vue-starter-kit',
-        icon: FolderGit2,
-    },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#vue',
-        icon: BookOpen,
+        title: 'Kembali ke situs',
+        href: home(),
+        icon: ExternalLink,
     },
 ];
 </script>
